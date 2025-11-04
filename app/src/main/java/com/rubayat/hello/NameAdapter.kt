@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.rubayat.hello.databinding.ItemListBinding
+import java.util.Locale
 
 
 class NameAdapter(val names: List<Contact>): RecyclerView.Adapter<itemViewHolder>(){
@@ -25,17 +26,14 @@ class NameAdapter(val names: List<Contact>): RecyclerView.Adapter<itemViewHolder
             names[position].apply {
                 nameTv.text = name
                 nmbrTv.text = mobile
+
                 if(!image.isNullOrEmpty()){
                     imageTv.load(image)
                 }else{
                     imageTv.gone()
                     initialtext.visible()
                     initialtext.text = name.first().uppercaseChar().toString()
-
                 }
-
-
-
                 callBtn.setOnClickListener {
                     val intent = Intent(Intent.ACTION_DIAL)
                     intent.data = Uri.parse("tel: ${mobile}")
@@ -45,7 +43,6 @@ class NameAdapter(val names: List<Contact>): RecyclerView.Adapter<itemViewHolder
             }
         }
     }
-
     override fun getItemCount(): Int {
         return names.size
     }

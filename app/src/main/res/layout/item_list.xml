@@ -1,82 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="4dp"
     app:cardCornerRadius="8dp"
-    app:cardElevation="12dp">
+    app:cardElevation="6dp">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:padding="4dp"
         android:layout_height="match_parent"
         android:background="#F0F4F6">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageTv"
+        <FrameLayout
+            android:id="@+id/imageTextContainer"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp"
-            android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/circleImageView"
-            android:src="@drawable/rub"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"  />
-        <TextView
-            android:id="@+id/initialtext"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:gravity="center"
-            android:text="R"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:visibility="gone"
-            android:background="@drawable/circle_bg"
-            app:layout_constraintStart_toStartOf="@id/imageTv"
-            app:layout_constraintEnd_toEndOf="@id/imageTv"
-            app:layout_constraintTop_toTopOf="@id/imageTv"
-            app:layout_constraintBottom_toBottomOf="@id/imageTv"/>
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/nameTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Rubayat All hassan"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/imageTv"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:id="@+id/nmbrTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="8dp"
-            android:text="01873938625"
-            android:textColor="#000000"
-            android:layout_marginStart="8dp"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@id/imageTv"
-            app:layout_constraintTop_toBottomOf="@+id/nameTv" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/rub"
+                app:shapeAppearanceOverlay="@style/circleImageView" />
 
+            <TextView
+                android:id="@+id/initialtext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="R"
+                android:background="@drawable/circle_bg"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:textSize="32sp" />
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nameNum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/imageTextContainer"
+            app:layout_constraintTop_toTopOf="@id/imageTextContainer"
+            app:layout_constraintBottom_toBottomOf="@id/imageTextContainer"
+            app:layout_constraintEnd_toStartOf="@id/callBtn"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <TextView
+                android:id="@+id/nameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rubayat Al Hassan"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nmbrTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01873938625"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/nameTv"
+                app:layout_constraintTop_toBottomOf="@id/nameTv"
+                android:layout_marginTop="4dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Call Button -->
         <ImageButton
             android:id="@+id/callBtn"
             android:layout_width="44dp"
             android:layout_height="44dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/baseline_call_24"
-            android:contentDescription="call"
+            android:layout_marginEnd="8dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="Call"
+            android:src="@drawable/baseline_call_24"
+            app:tint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.928"
-            app:layout_constraintStart_toEndOf="@+id/imageTv"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.555" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="@id/imageTextContainer"
+            app:layout_constraintBottom_toBottomOf="@id/imageTextContainer" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

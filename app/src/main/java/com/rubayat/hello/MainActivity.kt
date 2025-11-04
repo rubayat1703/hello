@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
         val user = listOf(
             Contact("Rubayat","+8801873938625",""),
             Contact("Razia Mannan", "+880130000002", "https://randomuser.me/api/portraits/women/2.jpg"),
-            Contact("Arafat Hossain", "+880130000003", "https://randomuser.me/api/portraits/men/3.jpg"),
-            Contact("Tasin Rahman", "+880130000004", "https://randomuser.me/api/portraits/men/4.jpg"),
+            Contact("Arafat Hossain", "+880130000003", ""),
+            Contact("Tasin Rahman", "+880130000004", ""),
             Contact("Nafisa Ahmed", "+880130000005", "https://randomuser.me/api/portraits/women/5.jpg"),
             Contact("Sakib Hasan", "+880130000006", "https://randomuser.me/api/portraits/men/6.jpg"),
             Contact("Sumaiya Noor", "+880130000007", "https://randomuser.me/api/portraits/women/7.jpg"),
