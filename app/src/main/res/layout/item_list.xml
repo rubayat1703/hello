@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="12dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F0F4F6">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageTv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+            android:src="@drawable/rub"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"  />
+        <TextView
+            android:id="@+id/initialtext"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="R"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:visibility="gone"
+            android:background="@drawable/circle_bg"
+            app:layout_constraintStart_toStartOf="@id/imageTv"
+            app:layout_constraintEnd_toEndOf="@id/imageTv"
+            app:layout_constraintTop_toTopOf="@id/imageTv"
+            app:layout_constraintBottom_toBottomOf="@id/imageTv"/>
+
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Rubayat All hassan"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imageTv"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/nmbrTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:text="01873938625"
+            android:textColor="#000000"
+            android:layout_marginStart="8dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/imageTv"
+            app:layout_constraintTop_toBottomOf="@+id/nameTv" />
+
+        <ImageButton
+            android:id="@+id/callBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/baseline_call_24"
+            android:contentDescription="call"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.928"
+            app:layout_constraintStart_toEndOf="@+id/imageTv"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.555" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
