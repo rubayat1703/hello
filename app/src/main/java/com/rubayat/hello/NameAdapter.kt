@@ -40,7 +40,18 @@ class NameAdapter(val names: List<Contact>): RecyclerView.Adapter<itemViewHolder
                     it.context.startActivity(intent)
 
                 }
+                root.setOnClickListener {
+                    val context = it.context
+                    val intent = Intent(context, DetailsActivity::class.java)
+                    intent.putExtra("image",image)
+                    intent.putExtra("name",name)
+                    intent.putExtra("number",mobile)
+                    context.startActivity(intent)
+
+                }
+
             }
+
         }
     }
     override fun getItemCount(): Int {
